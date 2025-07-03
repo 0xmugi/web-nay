@@ -60,3 +60,49 @@ canvas {
   fill: #00FFAA;
   filter: drop-shadow(0 0 6px #00FFAA);
 }
+
+/* Buat game container lebih responsif dan tinggi maksimal di hp */
+#gameContainer {
+  width: 90vw;
+  max-width: 400px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+/* Canvas full width dan kotak */
+#gameCanvas {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; /* pastikan kotak */
+  max-height: 60vh;
+  border-radius: 12px;
+}
+
+/* Tombol kontrol lebih besar dan mudah disentuh */
+#mobileControls button.control-btn {
+  font-size: 2.5rem;
+  padding: 16px;
+  background: linear-gradient(to right, #8A2BE2, #DDA0DD);
+  border-radius: 12px;
+  user-select: none;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.6);
+}
+
+/* Spasi antar tombol */
+#mobileControls {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Hide desktop controls if any for mobile */
+@media (max-width: 768px) {
+  #pauseButton, #restartButton {
+    flex: 1 1 45%;
+    font-size: 1.1rem;
+    padding: 12px 0;
+  }
+}
