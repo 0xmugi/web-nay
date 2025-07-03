@@ -1,0 +1,62 @@
+body {
+  background: linear-gradient(135deg, #4B0082, #8A2BE2, #DDA0DD);
+  background-size: 400%;
+  animation: gradientBG 15s ease infinite;
+  margin: 0;
+  overflow: hidden;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+canvas {
+  border: 4px solid transparent;
+  border-image: linear-gradient(to right, #8A2BE2, #DDA0DD) 1;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+  display: block;
+  border-radius: 12px;
+}
+
+.control-btn {
+  touch-action: manipulation;
+  background: linear-gradient(to right, #8A2BE2, #DDA0DD);
+}
+
+.control-btn:hover {
+  background: linear-gradient(to right, #6A0DAD, #C71585);
+}
+
+/* Particle effect */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  background: #DDA0DD;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFade 0.5s ease-out;
+}
+
+@keyframes particleFade {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0); }
+}
+
+/* Background grid canvas full screen */
+#backgroundGridCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Speed Boost food style */
+.speed-boost {
+  fill: #00FFAA;
+  filter: drop-shadow(0 0 6px #00FFAA);
+}
